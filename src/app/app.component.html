@@ -1,0 +1,15 @@
+Data Time.<br/><br/>
+<ng-container *ngIf="results | async as datas">
+	<ng-container *ngFor="let data of datas">
+		<br/>
+		<br/>
+		<ng-container *ngIf="data.isPrime">
+			Yes {{data.value}} is prime!
+		</ng-container>
+		<ng-container *ngIf="!data.isPrime">
+			No {{data.value}} is not prime!
+			<br/>
+    Divisors: {{getDivisors(data.value) | json}}
+  </ng-container>
+		</ng-container>
+	</ng-container>
